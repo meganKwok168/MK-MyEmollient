@@ -265,70 +265,77 @@ let st = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection</title>
     <style>
-        #rest {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-        @media (min-width: 600px) {
-            #rest {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+#rest {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* default: 1 column on small screens */
+  gap: 0;
+  width: 100%;
+}
 
-        @media (min-width: 992px) {
-            #rest {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
+@media (min-width: 600px) {
+  #rest {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
 
-        .cell {
-            text-align: center;
-            padding-bottom: 20px;
-        }
+@media (min-width: 992px) {
+  #rest {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktops */
+  }
+}
+.cell {
+  text-align: center;
+}
 
-        .imgs {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
+.imgs {
+  position: relative;
+  width: 100%;  /* fills its grid cell completely */
+  aspect-ratio: 1 / 1; /* keeps square shape */
+}
 
-        .un,
-        .deux {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+.un,
+.deux {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-        .deux {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+.deux {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-        .imgs:hover .deux {
-            opacity: 1;
-        }
+.imgs:hover .deux {
+  opacity: 1;
+}
 
-        .heading {
-            text-align: center;
-            padding-top: 10px;
-        }
+.heading {
+  text-align: center;
+  padding: 1vw 0;
+}
 
-        .name {
-            text-decoration: none;
-            color: black;
-        }
+.name {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding-top: 0.1vw;
+  padding-bottom: 2vw;
+}
 
-        .name:visited {
-            color: black;
-        }
-    </style>
+.name:visited {
+  color: black;
+}
+
+</style>
 </head>
 <body>
     <div id="rest"></div>
@@ -371,71 +378,79 @@ hideShopifyCode();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection</title>
-    <style>
-        #rest {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
+<style>
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-        @media (min-width: 600px) {
-            #rest {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+#rest {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* default: 1 column on small screens */
+  gap: 0;
+  width: 100%;
+}
 
-        @media (min-width: 992px) {
-            #rest {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
+@media (min-width: 600px) {
+  #rest {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
 
-        .cell {
-            text-align: center;
-            padding-bottom: 20px;
-        }
+@media (min-width: 992px) {
+  #rest {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktops */
+  }
+}
 
-        .imgs {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
+.cell {
+  text-align: center;
+}
 
-        .un,
-        .deux {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+.imgs {
+  position: relative;
+  width: 100%;  /* fills its grid cell completely */
+  aspect-ratio: 1 / 1; /* keeps square shape */
+}
 
-        .deux {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+.un,
+.deux {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-        .imgs:hover .deux {
-            opacity: 1;
-        }
+.deux {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-        .heading {
-            text-align: center;
-            padding-top: 10px;
-        }
+.imgs:hover .deux {
+  opacity: 1;
+}
 
-        .name {
-            text-decoration: none;
-            color: black;
-        }
+.heading {
+  text-align: center;
+  padding: 1vw 0;
+}
 
-        .name:visited {
-            color: black;
-        }
-    </style>
+.name {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding-top: 0.1vw;
+  padding-bottom: 2vw;
+}
+
+.name:visited {
+  color: black;
+}
+
+</style>
 </head>
 <body>
     <div id="rest"></div>

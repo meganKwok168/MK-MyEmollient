@@ -11,7 +11,7 @@ const questions = [
     {
         "question": "Do you have any specific issues you would like to address?",
         "answers": ["Eczema", "Psoriasis", "Stretch Marks", "Cracked Heels", "Skin Elasticity", "Dark Spots/Hyperpigmentation", "Muscle Tension", "None of the above"],
-        "quesiton_mode": all_that_apply
+        "question_mode": all_that_apply
     },
     {
         "question": "Do you experience hot flashes?",
@@ -192,3 +192,92 @@ const products = [
         }
     }
 ]
+
+
+function makeForm(){
+
+    st = `<form id="slideshowForm">`; //start string
+    
+    for (let q = 0; q < questions.length; q++){ //iterate through questions
+    
+        if (q == 0){
+            st+=  `<div class="slideActive" id="q${q}">`;
+        }
+        else{
+            st+=  `<div class="slide" id="q${q}">`;
+        }
+        st += `<p>${questions[q].question}</p>`; //quesiton
+         st+= `<div class="options">`
+        for (let a = 0; a < questions[q].answers.length; a++){
+            let inputMode = ``;
+            if (questions[q].question_mode == all_that_apply){
+                inputMode = `checkbox`;
+            } 
+            else {
+                inputMode = `radio`;
+            }
+            st+=`<input type = "${inputMode}"
+                id="q${q}a${a}" value="${questions[q].answers[a]}" name="q${q}">
+                <label for="q${q}a${a}">${questions[q].answers[a]}</label>    <br>`;
+        }
+            
+
+        st += `</div>   </div>`;
+    }
+
+    st+=`   <div id="buttons"></div>
+    </form>`;
+
+    document.getElementById("display").innerHTML = st; //insert code into HTML
+}
+
+
+let currentSlide = 0;
+
+function makeButtons(){
+    let nextButtonCode = ``;
+    if (currentSlide == questions.length-1){ //if currentSlide is last slide
+        nextButtonCode = `<button type="submit" id="submitButton">Submit</button>`;
+    }
+    else{
+        nextButtonCode = `<button type="button" id="nextButton" onclick="changeSlide(1)">></button>`;
+    }
+    let prevButtonCode = ``;
+    if (currentSlide == 0){ //if currentSlide is first slide
+        prevButtonCode = `disabled`      //disable prevButton
+    }
+    document.getElementById("buttons").innerHTML =
+    `<div class="buttons">
+        <button type="button" id="prevButton" onclick="changeSlide(-1)" ${prevButtonCode}><</button>
+        ${nextButtonCode}
+    </div>`;
+
+    document.getElementById("slideshowForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        //processing data===============================
+        let formData = new FormData(slideshowForm);
+        let formValuesList = []
+        for (let [key, value] of formData.entries()) {
+            formValuesList.push({ name: key, value: value });
+        }
+        //call function for making result and input processed data
+        makeResult(formValuesList);
+    })
+}
+
+function changeSlide(n){
+    document.getElementById(`q${currentSlide}`).className = "slide";
+    currentSlide += n;
+    document.getElementById(`q${currentSlide}`).className="slideActive"
+    makeButtons();
+}
+
+function makeResult(formValues){
+    document.getElementById("results").innerHTML = JSON.stringify(formValues);
+}
+
+makeForm();
+makeButtons();
+
+
+

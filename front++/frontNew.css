@@ -1,15 +1,14 @@
-/* Ingredients/Front Page Stylesheet - Final Fixed Version */
 .section {
   position: relative;
   padding: 30px;
-  width: 93%;
-  max-width: 93%;
+  width: 99%;
+  max-width: 99%;
   overflow: hidden;
 }
 
 .sectionName {
   font-size: 30px;
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
   letter-spacing: 0.64px;
   text-align: center;
   margin-top: 20px;
@@ -18,8 +17,8 @@
 
 .list-wrapper {
   position: relative;
-  width: 93%; /* Full width minus margins */
-  margin: 0 3.5%; /* Symmetric margins */
+  width: 99.8%; /* Full width minus margins */
+  margin: 0 0.1%; /* Symmetric margins */
   /* overflow: hidden; */ /* Remove if hiding buttons */
 }
 .list {
@@ -102,7 +101,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
   font-family: 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -118,8 +117,8 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .list {
-    margin: 0 calc(50% - 150px);
-    scroll-padding: 0 calc(50% - 100px);
+    margin: 0px;
+    scroll-padding: 0px;
   }
   
   .item {
@@ -130,4 +129,11 @@
   .overlay h1 {
     font-size: 20px;
   }
+
+  .list-wrapper {
+  position: relative;
+  width: 100%; /* Full width minus margins */
+  margin: 0 0%; /* Symmetric margins */
+  /* overflow: hidden; */ /* Remove if hiding buttons */
+}
 }

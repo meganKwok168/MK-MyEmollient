@@ -5,13 +5,270 @@
     <title>Document</title>
 </head>
 
-<link rel="stylesheet" href="frontNew.css">
+<style>
+/* Ingredients/Front Page Stylesheet - Final Fixed Version */
+.section {
+  position: relative;
+  padding: 30px;
+  width: 99%;
+  max-width: 99%;
+  overflow: hidden;
+}
+
+.sectionName {
+  font-size: 30px;
+  /* font-family: 'Times New Roman', Times, serif; */
+  letter-spacing: 0.64px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -40px;
+}
+
+.list-wrapper {
+  position: relative;
+  width: 99.8%; /* Full width minus margins */
+  margin: 0 0.1%; /* Symmetric margins */
+  /* overflow: hidden; */ /* Remove if hiding buttons */
+}
+.list {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Optional: Add side padding to avoid buttons overlapping content */
+  padding: 10px 40px;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 190px;
+  max-height: 200px;
+  border-radius: 15px;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 1;
+}
+
+.overlay h1 {
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  letter-spacing: 0.64px;
+  margin-bottom: 10px;
+}
+
+.overlay span {
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.learnMore {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 2;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .list {
+    margin: 0px;
+    scroll-padding: 0px;
+  }
+  
+  .item {
+    width: 180px;
+    min-height: 270px;
+  }
+  
+  .overlay h1 {
+    font-size: 20px;
+  }
+
+  .list-wrapper {
+  position: relative;
+  width: 100%; /* Full width minus margins */
+  margin: 0 0%; /* Symmetric margins */
+  /* overflow: hidden; */ /* Remove if hiding buttons */
+}
+}
+
+
+</style>
+
 
 <body>
     
-    <h1 class="sectionName">Made with Non-Toxic Ingredients</h1>
+    <h1 class="sectionName">100% Non-Toxic</h1>
     <div id="ingredients" class="section"></div>
 </body>
 </html>
 
-<script src="front.js"></script>
+<script>
+    const ingredients = [
+    {
+        name: "Organic Shea",
+        short:"Shea",
+        descript: "Deeply moisturizes dry skin and boosts collagen production with rich vitamins A and E",
+        img: "shea.jpg"
+    },
+    {
+        name: "Aloe Vera",
+        short:"Aloe",
+        descript: "Soothes irritation and calms inflammation while hydrating sensitive or eczema prone skin",
+        img: "aloe.png"
+    },
+    {
+        name: "Kokum Butter",
+        short: "Kokum",
+        descript: "Restores skin elasticity and supports healing without clogging pores, perfect for stretch marks",
+        img: "kokum.jpg"
+    },
+    {
+        name: "Safflower Oil",
+        short: "Safflower",
+        descript:  "Reduce signs of aging, repair the skin barrier, brighten hyperpigmentation, and protect against UV damage",
+        img: "safflower.jpg"
+    },
+    {
+        name: "Grapeseed Oil",
+        short: "Grapeseed",
+        descript: "Lightweight and antioxidant-rich, it helps fade scars and tightens skin naturally",
+        img: "grape.jpg"
+    },
+    {
+        name: "Beeswax",
+        short: "Beeswax",
+        descript: "Seals in moisture and creates a protective barrier to shield skin from environmental damage",
+        img: "beeswax.jpg"
+    },
+    {
+        name: "Mango Butter",
+        short: "Mango",
+        descript: "Softens rough skin and boosts hydration with essential fatty acids and vitamins A & C",
+        img: "mango.jpg"
+    }
+]
+
+function makeIngredients(){
+    st=`
+    <br>
+    <table>
+                <tr>
+                        <div class="list-wrapper">
+                            <ul class="list">
+
+    `;
+
+    for (let i of ingredients){
+        st += `
+        <!-- ${i.name} -->
+        <li class="item">
+            <div class="content" data-ingredient ="${i.short}">
+                <img src="${i.img}" alt="" >
+                <div class="overlay" id="overlay${i.short}">
+                    <h1>
+                    ${i.name}
+                    <br><br>
+                    <span>Learn More</span>
+                    </h1>
+                                            
+                </div>
+                <div class="learnMore" id="learnMore${i.short}"> ${i.descript}</div>
+            </div>
+        </li>
+        `
+    }
+
+    st+= `
+                            </ul>
+                        </div>                                    
+                    
+                </tr>
+            </table>`
+
+    document.getElementById("ingredients").innerHTML = st;
+}
+
+makeIngredients();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  makeIngredients(); // Generate HTML first
+
+  function descript(ingredient) {
+    const learnMore = document.getElementById(`learnMore${ingredient}`);
+    const overlay = document.getElementById(`overlay${ingredient}`);
+
+    if (learnMore && overlay) {
+      const isHidden = getComputedStyle(learnMore).display === "none";
+      overlay.style.display = isHidden ? "none" : "flex";
+      learnMore.style.display = isHidden ? "flex" : "none";
+    }
+  }
+
+  // Now attach listeners to the elements we just rendered
+  const contentItems = document.querySelectorAll(".content[data-ingredient]");
+  contentItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const ingredient = item.getAttribute("data-ingredient");
+      descript(ingredient);
+    });
+  });
+});
+
+</script>

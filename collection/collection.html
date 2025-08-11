@@ -13,33 +13,32 @@
 
 #rest {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* default: 1 column */
-  gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(1, 1fr); /* default: 1 column on small screens */
+  gap: 0;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
   #rest {
-    grid-template-columns: repeat(2, 1fr); /* tablets: 2 columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
 }
 
 @media (min-width: 992px) {
   #rest {
-    grid-template-columns: repeat(4, 1fr); /* desktops: 4 columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktops */
   }
 }
 
+
 .cell {
   text-align: center;
-  padding-bottom: 20px;
 }
-
 
 .imgs {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;  /* fills its grid cell completely */
+  aspect-ratio: 1 / 1; /* keeps square shape */
 }
 
 .un,
@@ -62,24 +61,27 @@
   opacity: 1;
 }
 
-
-.heading{
-    text-align: center;
-    padding-top: 10px;
+.heading {
+  text-align: center;
+  padding: 1vw 0;
 }
 
-.name{
-    text-decoration: none;
-    color: black;
+.name {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding-top: 0.1vw;
+  padding-bottom: 2vw;
 }
 
 .name:visited {
-    color: black;
+  color: black;
 }
+
+
 </style>
 
 <body>
-    <h1 class="heading">My Emollient Body Butter Collection</h1>
     <div id="rest"></div>
     
 </body>

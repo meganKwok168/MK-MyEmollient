@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multi-step Form Slideshow</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  .slide {
+    display: none;
+  }
+  .slide.active {
+    display: block;
+  }
+  .buttons {
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 15px;
+    margin: 5px;
+  }
+  .options label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Multi-step Form</h2>
+
+<form id="multiStepForm">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <p>1. What is your favorite color?</p>
+    <div class="options">
+      <label><input type="radio" name="color" value="Red" required> Red</label>
+      <label><input type="radio" name="color" value="Blue"> Blue</label>
+      <label><input type="radio" name="color" value="Green"> Green</label>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <p>2. What is your preferred pet?</p>
+    <div class="options">
+      <label><input type="radio" name="pet" value="Dog" required> Dog</label>
+      <label><input type="radio" name="pet" value="Cat"> Cat</label>
+      <label><input type="radio" name="pet" value="Bird"> Bird</label>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <p>3. Pick your favorite season:</p>
+    <div class="options">
+      <label><input type="radio" name="season" value="Spring" required> Spring</label>
+      <label><input type="radio" name="season" value="Summer"> Summer</label>
+      <label><input type="radio" name="season" value="Winter"> Winter</label>
+    </div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="buttons">
+    <button type="button" id="prevBtn" onclick="changeSlide(-1)" disabled>Previous</button>
+    <button type="button" id="nextBtn" onclick="changeSlide(1)">Next</button>
+  </div>
+</form>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const form = document.getElementById("multiStepForm");
+  let currentSlide = 0;
+
+  function showSlide(n) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === n);
+    });
+    prevBtn.disabled = n === 0;
+    if (n === slides.length - 1) {
+      nextBtn.textContent = "Submit";
+    } else {
+      nextBtn.textContent = "Next";
+    }
+  }
+
+  function changeSlide(direction) {
+    // Validate current slide before moving forward
+    if (direction === 1) {
+      const inputs = slides[currentSlide].querySelectorAll("input");
+      let valid = false;
+      inputs.forEach(input => {
+        if (input.checked) valid = true;
+      });
+      if (!valid) {
+        alert("Please select an option before continuing.");
+        return;
+      }
+    }
+
+    currentSlide += direction;
+
+    if (currentSlide >= slides.length) {
+      // Submit form
+      alert("Form submitted!");
+      // For example purposes, just reset:
+      form.reset();
+      currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+  }
+
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>

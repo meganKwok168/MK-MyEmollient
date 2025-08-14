@@ -17,7 +17,6 @@
         display: block;
         width: 15vw;
         height: 25vw;
-        border-radius: 8px;
         border: 1px solid #664242;
         color: 664242;
         text-decoration: none;
@@ -25,11 +24,13 @@
         padding: 2vw;
         background-color: rgb(252,228,236);
         transition: background-color 0.3s;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     .sectionButton:hover {
-        background-color: #664242;
-        color: rgb(252,228,236);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        transform: translateY(-3px);
+        transition: transform 0.3s ease;
     }
 
     .buttonContent {

@@ -21,8 +21,8 @@ let defaultProducts = [
     {
         "name": "Body Butter for Sensitive Skin",
         "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
-        "imgUn": "https://myemollient.com/cdn/shop/products/amber2_50_sensitive_1296x.jpg?v=1585272159",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179"
+        "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179",
+        "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._2700x.jpg?v=1755053048"
     },
     {
         "name": "Unscented Body Butter",
@@ -34,7 +34,7 @@ let defaultProducts = [
         "name": "Peppermint Body Butter",
         "link": "https://myemollient.com/collections/peppermint-body-butter",
         "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/Cooling_Body_Butter_1296x.png?v=1750776262"
+        "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
     },
     {
         "name": "Gift Sets",
@@ -74,8 +74,8 @@ let tempProducts = [
     {
         "name": "Body Butter for Sensitive Skin",
         "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
-        "imgUn": "https://myemollient.com/cdn/shop/products/amber2_50_sensitive_1296x.jpg?v=1585272159",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179"
+        "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179",
+        "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._2700x.jpg?v=1755053048"
     },
     {
         "name": "Unscented Body Butter",
@@ -87,7 +87,7 @@ let tempProducts = [
         "name": "Peppermint Body Butter",
         "link": "https://myemollient.com/collections/peppermint-body-butter",
         "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/Cooling_Body_Butter_1296x.png?v=1750776262"
+        "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
     },
     {
         "name": "Gift Sets",

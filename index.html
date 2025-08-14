@@ -6,12 +6,13 @@
 </head>
 <style>
     body{
-        background-color: #f4e4ec;
+        background-color: #af8382;
     }
 
     .heading{
         text-align:center;
         padding-top: 10px;
+        color: #472e2e;
     }
     h2{
         font-size: 30px;
@@ -27,12 +28,28 @@
     }
     .section{
         display: flex;
-        justify-content: center;
-        width: 30vw;
-        min-height: 20vw;
-        border: 1px solid black;
+        width: 15vw;
+        height: 25vw;
+        border: 1px solid #472e2e;
+        color:#472e2e;
+        text-decoration: none;
         text-align: center;
+        padding: 2vw;
+        background-color: rgb(252,228,236);
+        transition: background-color 0.3s;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        justify-content: center;
         align-items: center;
+        font-size: 3vw;
+    }
+    .section:hover{
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        transform: translateY(-3px);
+        transition: transform 0.3s ease;
+    }
+    .section:visited{
+        color: #472e2e;
+
     }
 
 </style>

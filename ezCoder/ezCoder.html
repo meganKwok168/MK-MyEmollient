@@ -32,7 +32,7 @@
         transform: translateY(-3px);
         transition: transform 0.3s ease;
     }
-
+a
     .buttonContent {
         display: flex;
         flex-direction: column;
@@ -47,6 +47,25 @@
     body{
         background-color: #af8382;
     }
+    .goBack{
+        font-size: 20px;
+        margin-left: 20px;
+        padding: 10px;
+        border: 1px solid #664242;
+        background-color: rgb(252,228,236); 
+        text-align: center;
+        color: #664242;
+        text-decoration: none;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .goBack:hover{
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .goBack:visited{
+        color: #664242;
+        text-decoration: none;
+    }
 
 </style>
 <body>
@@ -54,7 +73,7 @@
     <h1 style="text-align: center; padding-top: 2vw; color: #472e2e">EZ Coder - MK</h1>
 
     <div id="sections" class="buttonGrid"></div>
-
+    <a class="goBack" href="../index.html">Go Back</a>
     
 </body>
 </html>

@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<style>
+
+    .slideActive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 80vh;
+    }
+    .slide{
+        display: none;
+    }
+
+    .cell-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .cell, .descriptCell {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+        /* padding: 10px; */
+    }
+
+    .descript{
+        padding-left: 5vw;
+        padding-right: 5vw;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    .imgs {
+        width: 100%;
+        position: relative;
+    }
+
+    .imgs img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .un {
+        position: relative;
+        z-index: 1;
+    }
+
+    .deux {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+    }
+
+    .imgs:hover .deux {
+        opacity: 1;
+    }
+
+    .overlay-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        padding: 12px 32px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        
+        z-index: 3;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .overlay-btn:hover {
+        background-color: black;
+        color: white;
+    }
+
+
+
+    .name{
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+        /* font-weight: bold; */
+
+    }
+
+    .descriptCell{
+        background-color: #3c3c3c;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertical centering */
+        align-items: center;     /* horizontal centering */
+        padding: 20px;   
+        text-align: center;
+    }
+
+    .name:visited {
+        color: white;
+    }
+
+    /* Responsive stacking */
+    @media (max-width: 768px) {
+
+        .cell, .descriptCell {
+            flex: 0 0 100%;  /* full width */
+        }
+
+        .descriptCell {
+            padding-left: 5vw;   /* optional: keep some padding */
+            padding-right: 5vw;
+            height: 100vw;  /* so that the description box will still be a square */
+        }
+    }
+
+
+    /* Hide native radio/checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 15px;
+    width: 50vw;
+    background-color: #7D9A6C;
+    display: flex;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 75vw;
+    margin: 0 auto;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F0E6 ;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 8px;
+    /* border: 2px solid #FFEFE0; */
+    /* height: 5vh; */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+    text-align: center;
+    width: 20vw;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.option-btn:hover {
+    background-color: #7D9A6C;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+}
+
+/* Selected state */
+input[type="radio"]:checked + .option-btn,
+input[type="checkbox"]:checked + .option-btn {
+    background-color: #7D9A6C;
+    color: white;
+    border:none;
+    /* border-color: #4CAF50; */
+}
+
+.quizButtons {
+    display: flex;              
+    justify-content: center;      
+    align-items: center;         
+    gap: 20px;                  
+    padding-top: 5vh;
+}
+
+
+.prevNextButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    height: 8vh;
+    min-width: 8vh;
+    padding: 0 12px;
+    border: none;
+    background-color:  #A46942  ;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.prevNextButtons:hover {
+    background-color: #A0522D;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.prevNextButtons:disabled {
+    background-color: #D19C7F  ;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #FFF8E7;
+}
+
+.questionNum{
+    width: auto;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+}
+    .buttons{
+        height: 5vw;
+        display: flex;
+    }
+
+    .bouton{
+        flex: 1;
+        padding: 0.5vw;
+        margin: 0.5vw;
+        cursor: pointer;
+        background-color: rgb(252,228,236);
+        color: #664242;
+        transition: background-color 0.3s;
+        border: 1px solid #664242;
+        text-decoration: none;
+    }
+
+    .bouton:hover{
+        background-color: #664242;
+        color: rgb(252,228,236);
+    }
+    .questionEditContainer{
+        display: flex;
+        justify-content: center;
+        max-width: 70vw;
+        align-items: top;
+        flex-wrap: wrap;
+        gap: 2vw;
+        padding: 2vw;
+        border: 1px solid black;
+    }
+    .questionEdit{
+        background-color: #f4e4e4;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        width: 400px;
+        min-height: 50px;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .questionEdit:hover{
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        transform: translateY(-6px);
+        transition: transform 0.3s ease;
+    }
+    .right{
+        width: 25vw;
+        height: auto;
+        border: 20px solid #af8382;
+        background-color: rgb(252,228,236);
+        overflow: hidden;
+        display: flex;
+        
+    }
+
+textarea {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+body{
+    background-color: #af8382;
+}
+</style>
+<body>
+    <div id="display"></div>
+    <div id="buttons" class="buttons"></div>
+
+</html>
+
+<script src="quizCoder.js"></script>

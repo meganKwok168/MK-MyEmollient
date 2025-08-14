@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Questions</title>
+</head>
+<style>
+    body{
+        background-color: #af8382;
+    }
+    .questionEditContainer{
+        display: flex;
+        justify-content: center;
+        max-width: 70vw;
+        align-items: top;
+        flex-wrap: wrap;
+        gap: 2vw;
+        padding: 2vw;
+        border: 1px solid black;
+    }
+    .questionEdit{
+        background-color: #f4e4e4;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        width: 400px;
+        min-height: 50px;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        cursor: pointer;
+    }
+
+    .questionEdit:hover{
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        transform: translateY(-6px);
+        transition: transform 0.3s ease;
+    }
+
+        .right{
+        width: 25vw;
+        height: 43vw;
+        border: 20px solid #af8382;
+        background-color: rgb(252,228,236);
+        overflow: hidden;
+        
+    }
+
+</style>
+<body>
+    <div style="display: flex;">
+        <div class="questionEditContainer">
+            <div class="questionEdit">
+                Question
+                <div>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                </div>
+            </div>
+            <div class="questionEdit">
+                Question
+                <div>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                </div>
+            </div>
+            <div class="questionEdit">
+                Question
+                <div>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                </div>
+            </div>
+            <div class="questionEdit">
+                Question
+                <div>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                    <p>Choice</p>
+                </div>
+            </div>
+            <button class="questionEdit">+</button>
+        </div>
+        <div id="right" class="right">
+            right
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
+<script src="quizQuestions.js"></script>

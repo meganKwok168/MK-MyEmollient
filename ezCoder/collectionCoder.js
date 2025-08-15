@@ -16,7 +16,7 @@ let defaultProducts = [
         "name": "Almond + Vanilla Body Butter",
         "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
         "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-orgnanic-moisturizer_1296x.jpg?v=1747415007",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/whipped-almond-vanilla-body-butter-texture-eczema_1296x.jpg?v=1747427110"
+        "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-jar-mango-butter-almonds_2700x.jpg?v=1755053852"
     },
     {
         "name": "Body Butter for Sensitive Skin",
@@ -69,7 +69,7 @@ let tempProducts = [
         "name": "Almond + Vanilla Body Butter",
         "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
         "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-orgnanic-moisturizer_1296x.jpg?v=1747415007",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/whipped-almond-vanilla-body-butter-texture-eczema_1296x.jpg?v=1747427110"
+        "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-jar-mango-butter-almonds_2700x.jpg?v=1755053852"
     },
     {
         "name": "Body Butter for Sensitive Skin",

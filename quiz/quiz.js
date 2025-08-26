@@ -71,14 +71,33 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/Lemon_Sage_Body_Butter_for_Dry_Skin_and_Ec_1296x.jpg?v=1728704501",
         "imgDeux": "https://myemollient.com/cdn/shop/files/lemon_and_sage_body_butter_1296x.jpg?v=1728519251",
         "descript": "Infused with essential oils of lemon and sage, this butter not only pampers your skin but also envelops you in a rich, uplifting fragrance, providing a comforting experience with every use.",
-        "choices": {
-            [questions[1].answers[3]]: 1,
-            [questions[1].answers[5]]: 1,
-            [questions[2].answers[1]]: 1,
-            [questions[3].answers[0]]: 1,
-            [questions[4].answers[2]]: 3
-
-        }
+        "choices": [
+            {
+                "question": 1,
+                "answer": 5,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 5,
+                "score": 1
+            },
+            {
+                "question": 2,
+                "answer": 1,
+                "score": 1
+            },
+            {
+                "question": 3,
+                "answer": 0,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 2,
+                "score": 3
+            },
+        ]
     },
 
     {
@@ -87,10 +106,19 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/handmade-lavender-body-butter_2700x.jpg?v=1747099010",
         "imgDeux": "https://myemollient.com/cdn/shop/products/my-emollient-dry-skin-solution_2700x.jpg?v=1747099010",
         "descript": "Experience the best body butter for dry, sensitive, and eczema-prone skin.",
-        "choices": {
-            [questions[2].answers[0]]: 1,
-            [questions[4].answers[1]]: 3
-        }
+        "choices": [
+            {
+                "question": 2,
+                "answer": 0,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 1,
+                "score": 3
+            }
+        ]
+        
     },
     {
         "name": "Almond + Vanilla Body Butter",
@@ -98,10 +126,18 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-orgnanic-moisturizer_1296x.jpg?v=1747415007",
         "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-jar-mango-butter-almonds_2700x.jpg?v=1755053852",
         "descript": "Experience the ultimate in moisture with our handcrafted Almond + Vanilla Whipped Body Butter—a rich, non-greasy formula made with 7 skin-loving ingredients. ",
-        "choices": {
-            [questions[1].answers[2]]: 1,
-            [questions[4].answers[3]]: 3
-        }
+        "choices": [
+            {
+                "question": 1,
+                "answer": 2,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 3,
+                "score": 3
+            }
+        ]
     },
     {
         "name": "Body Butter for Sensitive Skin",
@@ -109,15 +145,43 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179",
         "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._2700x.jpg?v=1755053048",
         "descript": "This lightly scented body butter is crafted for those with sensitive skin who need a little extra care—including those managing dry patches or prone to eczema.",
-        "choices": {
-            [questions[0].answers[1]]: 2,
-            [questions[0].answers[2]]: 1,
-            [questions[0].answers[3]]: 1,
-            [questions[1].answers[0]]: 1,
-            [questions[1].answers[9]]: 1,
-            [questions[4].answers[3]]: 1,
-            [questions[4].answers[4]]: 1
-        }
+        "choices": [
+            {
+                "question": 0,
+                "answer": 1,
+                "score": 2
+            },
+            {
+                "question": 0,
+                "answer": 2,
+                "score": 1
+            },
+            {
+                "question": 0,
+                "answer": 3,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 0,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 9,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 3,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 4,
+                "score": 1
+            }
+        ]
     },
     {
         "name": "Unscented Body Butter",
@@ -125,13 +189,33 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/Unscented_Body_Butter_for_Winter_Dry_Skin_1296x.jpg?v=1737604260",
         "imgDeux": "https://myemollient.com/cdn/shop/files/best-body-butter-dry-skin-jar-closed_1296x.jpg?v=1747158292",
         "descript": "No Fragrance.  No Fluff. Just powerful hydration for even the most sensitive skin.",
-        "choices": {
-            [questions[0].answers[1]]: 1,
-            [questions[0].answers[2]]: 1,
-            [questions[0].answers[3]]: 1,
-            [questions[4].answers[4]]: 1,
-            [questions[4].answers[5]]: 3
-        }
+        "choices": [
+            {
+                "question": 0,
+                "answer": 1,
+                "score": 1
+            },
+            {
+                "question": 0,
+                "answer": 2,
+                "score": 1
+            },
+            {
+                "question": 0,
+                "answer": 3,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 4,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 5,
+                "score": 3
+            }
+        ]        
     },
     {
         "name": "Peppermint Body Butter",
@@ -139,15 +223,43 @@ const products = [
         "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
         "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005",
         "descript": "Crafted for dry, menopausal, and sensitive skin (including skin that's easily irritated or eczema-prone), the peppermint-infused formula delivers a crisp, cooling sensation while locking in long-lasting moisture.",
-        "choices": {
-            [questions[1].answers[3]]: 1,
-            [questions[1].answers[6]]: 1,
-            [questions[1].answers[7]]: 2,
-            [questions[1].answers[8]]: 1,
-            [questions[2].answers[1]]: 1,
-            [questions[3].answers[0]]: 1,
-            [questions[4].answers[0]]: 3
-        }
+        "choices": [
+            {
+                "question": 1,
+                "answer": 3,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 6,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 7,
+                "score": 2
+            },
+            {
+                "question": 1,
+                "answer": 8,
+                "score": 1
+            },
+            {
+                "question": 2,
+                "answer": 1,
+                "score": 1
+            },
+            {
+                "question": 3,
+                "answer": 0,
+                "score": 1
+            },
+            {
+                "question": 4,
+                "answer": 0,
+                "score": 3
+            }
+        ]  
     },
     {
         "name": "Jet Lag Set",
@@ -155,9 +267,13 @@ const products = [
         "imgUn": "",
         "imgDeux": "",
         "descript": "description",
-        "choices": {
-            [questions[3].answers[2]]: 3
-        }
+        "choices": [
+            {
+                "question": 3,
+                "answer": 2,
+                "score": 3
+            }
+        ]        
     },
     {
         "name": "Eczema",
@@ -165,10 +281,18 @@ const products = [
         "imgUn": "",
         "imgDeux": "",
         "descript": "description",
-        "choices": {
-            [questions[1].answers[0]]: 1,
-            [questions[1].answers[1]]: 1
-        }
+        "choices": [
+            {
+                "question": 1,
+                "answer": 0,
+                "score": 1
+            },
+            {
+                "question": 1,
+                "answer": 1,
+                "score": 1
+            }
+        ]
     }
 ]
 

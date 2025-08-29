@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".csv"/>
+    <pre id="output"></pre>
+</body>
+</html>
+
+<script>
+    function getCSV(){
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const content = e.target.result;
+                    document.getElementById('output').innerText = content;
+                };
+                reader.readAsText(file);
+            }
+        });
+    }
+
+    getCSV();
+
+    function makeJSON(csv){
+        let lines = csvString.split('\n').filter(line => line.trim() !== ''); //splits lines, removes empty lines
+        let headers = lines[0].split(',').map(header => header.trim()); //get headers from line 0, trim white space
+        
+    }
+
+</script>

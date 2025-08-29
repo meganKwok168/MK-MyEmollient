@@ -164,7 +164,7 @@ const products = [
             {
                 "question": 1,
                 "answer": 0,
-                "score": 1
+                "score": 10
             },
             {
                 "question": 1,
@@ -206,6 +206,16 @@ const products = [
                 "score": 1
             },
             {
+                "question": 1,
+                "answer": 0,
+                "score": 10
+            },
+            {
+                "question": 1,
+                "answer": 1,
+                "score": 10
+            },
+            {
                 "question": 4,
                 "answer": 4,
                 "score": 1
@@ -237,12 +247,12 @@ const products = [
             {
                 "question": 1,
                 "answer": 7,
-                "score": 2
+                "score": 10
             },
             {
                 "question": 1,
                 "answer": 8,
-                "score": 1
+                "score": 10
             },
             {
                 "question": 2,

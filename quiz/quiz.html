@@ -148,7 +148,7 @@ input[type="checkbox"] {
     text-align: center;
     padding: 15px;
     width: 50vw;
-    background-color: #7D9A6C;
+    color: white;
 }
 
 .options {
@@ -164,11 +164,11 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F5F0E6 ;
-    color: black;
+    background-color: none;
+    color: white;
     padding: 12px 25px;
-    border-radius: 8px;
-    /* border: 2px solid #FFEFE0; */
+    /* border-radius: 8px; */
+    border: 2px solid white;
     /* height: 5vh; */
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -179,18 +179,16 @@ input[type="checkbox"] {
 }
 
 .option-btn:hover {
-    background-color: #7D9A6C;
-    border: none;
+    background-color: rgba(114,125,101,82);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
 }
 
 /* Selected state */
 input[type="radio"]:checked + .option-btn,
 input[type="checkbox"]:checked + .option-btn {
-    background-color: #7D9A6C;
+    background-color:  rgba(114,125,101,82);
     color: white;
-    border:none;
-    /* border-color: #4CAF50; */
+    border: 2px solid white;
 }
 
 .buttons {
@@ -212,8 +210,8 @@ input[type="checkbox"]:checked + .option-btn {
     min-width: 8vh;
     padding: 0 12px;
     border: none;
-    background-color:  #A46942  ;
-    color: white;
+    background-color:  rgb(238,238,238)  ;
+    color: black;
     cursor: pointer;
     font-family: inherit;
     font-size: 1rem;
@@ -223,16 +221,23 @@ input[type="checkbox"]:checked + .option-btn {
 }
 
 .prevNextButtons:hover {
-    background-color: #A0522D;
+    background-color: rgb(114,125,101);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     color: white;
 }
 
 .prevNextButtons:disabled {
-    background-color: #D19C7F  ;
+    background-color: rgba(238,238,238,70) ;
     cursor: not-allowed;
     box-shadow: none;
-    color: #FFF8E7;
+    color: black;
+}
+
+body{
+    background-image: url("butterBackground.jpeg"); /* Replace with your image path */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-size: cover; /* Stretches image to cover the entire background */
+    background-position: center; /* Centers the image */
 }
 
 </style>

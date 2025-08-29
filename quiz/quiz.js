@@ -245,11 +245,6 @@ const products = [
                 "score": 10
             },
             {
-                "question": 1,
-                "answer": 8,
-                "score": 10
-            },
-            {
                 "question": 2,
                 "answer": 1,
                 "score": 1

@@ -51,11 +51,11 @@ const questions = [
         "question_mode": choose_one
     },
     {
-        "question": "What kind of fragrance do you prefer?",
+        "question": "What kind of mood do you prefer?",
         "answers": [
-            "Refreshing & natural",
-            "Calming & floral",
-            "Herbal & grounding",
+            "Refreshing",
+            "Calming",
+            "Grounding",
             "Warm & comforting",
             "Clean & simple",
             "None, I prefer fragrance-free skincare"
@@ -214,11 +214,6 @@ const products = [
                 "question": 1,
                 "answer": 1,
                 "score": 10
-            },
-            {
-                "question": 4,
-                "answer": 4,
-                "score": 1
             },
             {
                 "question": 4,

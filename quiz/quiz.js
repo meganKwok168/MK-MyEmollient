@@ -375,52 +375,46 @@ function changeSlide(n){
     makeButtons();
 }
 
-function makeResult(formValues){
-
+function makeResult(formValues) {
     let butter = null;
     let highestScore = 0;
-
-    //answer comparisons
-    for (let product of products){  //iterate through each product
+    for (let product of products) {
         let score = 0;
-        for (let formValue of formValues){   //iterate through formValue
-        if (Object.keys(product.choices).includes(formValue.value)) { //look at product choices
-            score++;
+        for (let choice of product.choices) {
+            let choiceText = questions[choice.question].answers[choice.answer];
+            for (let formValue of formValues) {
+                if (formValue.value === choiceText) {
+                    score += choice.score; // add the score
+                }
+            }
         }
-        }
-        if (score > highestScore){ //score comparison
+        if (score > highestScore) {
             highestScore = score;
             butter = product;
         }
     }
 
-    //make the result
-    if (butter != null){
-        let index = products.indexOf(butter);
-
-        let st=``; //initlialize string
-
-        st+=
-        `<div class="cell-container">
+    // display result
+    if (butter != null) {
+        let st = `
+        <div class="cell-container">
             <div class="cell">
                 <div class="imgs">
-                    <a href=${products[index].link}>
-                        <img class="un" src=${products[index].imgUn} alt="">
-                        <img class="deux" src=${products[index].imgDeux} alt="">
-                        <a href=${products[index].link} class="overlay-btn">SHOP CLEAN</a>
+                    <a href=${butter.link}>
+                        <img class="un" src=${butter.imgUn} alt="">
+                        <img class="deux" src=${butter.imgDeux} alt="">
+                        <a href=${butter.link} class="overlay-btn">SHOP CLEAN</a>
                     </a>
                 </div>
             </div>
             <div class="descriptCell">
-                <a class="name" href=${products[index].link}>${products[index].name}</a>
+                <a class="name" href=${butter.link}>${butter.name}</a>
                 <br>
-                <p class="descript">${products[index].descript}</p>
+                <p class="descript">${butter.descript}</p>
             </div>
         </div>`;
-
         document.getElementById("display").innerHTML = st;
     }
-
 }
 
 makeForm();

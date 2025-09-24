@@ -148,7 +148,7 @@ input[type="checkbox"] {
     text-align: center;
     padding: 15px;
     width: 50vw;
-    color: black;
+    color: white;
 }
 
 .options {
@@ -165,17 +165,17 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     background-color: none;
-    color: black;
+    color: white;
     padding: 12px 25px;
     /* border-radius: 8px; */
-    border: 2px solid black;
+    border: 2px solid white;
     /* height: 5vh; */
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     font-family: inherit;
     text-align: center;
     width: 20vw;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
 }
 
 .option-btn:hover {
@@ -187,8 +187,8 @@ input[type="checkbox"] {
 input[type="radio"]:checked + .option-btn,
 input[type="checkbox"]:checked + .option-btn {
     background-color:  rgba(114,125,101,82);
-    color: black;
-    border: 2px solid black;
+    color: white;
+    border: 2px solid white;
 }
 
 .buttons {
@@ -223,7 +223,7 @@ input[type="checkbox"]:checked + .option-btn {
 .prevNextButtons:hover {
     background-color: rgb(114,125,101);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    color: white;
+    color: black;
 }
 
 .prevNextButtons:disabled {
@@ -233,8 +233,11 @@ input[type="checkbox"]:checked + .option-btn {
     color: black;
 }
 
+
 body{
-    background-color: white;
+    background-image: url(leavesEdited.jpeg);
+    background-size: cover;
+    /* background-color: white; */
 }
 </style>
 <body>
@@ -242,7 +245,8 @@ body{
 </body>
 </html>
 
-<script>//question modes
+<script>
+    //question modes
 let all_that_apply = 0;
 let choose_one = 1;
 
@@ -301,8 +305,7 @@ const questions = [
             "Calming",
             "Grounding",
             "Warm & comforting",
-            "Clean & simple",
-            "None, I prefer fragrance-free skincare"
+            "Clean & simple", //unscented and sensitive skin        
         ],
         "question_mode": choose_one
     }
@@ -458,11 +461,6 @@ const products = [
                 "question": 1,
                 "answer": 1,
                 "score": 10
-            },
-            {
-                "question": 4,
-                "answer": 5,
-                "score": 3
             }
         ]        
     },
@@ -620,49 +618,82 @@ function changeSlide(n){
 }
 
 function makeResult(formValues) {
-    let butter = null;
-    let highestScore = 0;
-    for (let product of products) {
-        let score = 0;
-        for (let choice of product.choices) {
-            let choiceText = questions[choice.question].answers[choice.answer];
-            for (let formValue of formValues) {
-                if (formValue.value === choiceText) {
-                    score += choice.score; // add the score
+    console.log(formValues);
+    let questionBeingChecked = questions[4].answers[4]
+    let q4Answer = formValues.find(f => f.name === "q4")?.value;
+    if (q4Answer == questionBeingChecked){
+        let st = ``;
+        butters = [products[3], products[4]]
+        for (butter of butters){
+            st += `
+            <div class="cell-container" style="length: 30vh">
+                <div class="cell">
+                    <div class="imgs">
+                        <a href=${butter.link}>
+                            <img class="un" src=${butter.imgUn} alt="">
+                            <img class="deux" src=${butter.imgDeux} alt="">
+                            <a href=${butter.link} class="overlay-btn">SHOP CLEAN</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="descriptCell">
+                    <a class="name" href=${butter.link}>${butter.name}</a>
+                    <br>
+                    <p class="descript">${butter.descript}</p>
+                </div>
+            </div>
+            <br>
+            `;
+        }
+        document.getElementById("display").innerHTML = st;
+    }
+    else{
+        let butter = null;
+        let highestScore = 0;
+        for (let product of products) {
+            let score = 0;
+            for (let choice of product.choices) {
+                let choiceText = questions[choice.question].answers[choice.answer];
+                for (let formValue of formValues) {
+                    if (formValue.value === choiceText) {
+                        score += choice.score; // add the score
+                    }
                 }
             }
+            if (score > highestScore) {
+                highestScore = score;
+                butter = product;
+            }
         }
-        if (score > highestScore) {
-            highestScore = score;
-            butter = product;
+
+        // display result
+        if (butter != null) {
+            let st = `
+            <div class="cell-container">
+                <div class="cell">
+                    <div class="imgs">
+                        <a href=${butter.link}>
+                            <img class="un" src=${butter.imgUn} alt="">
+                            <img class="deux" src=${butter.imgDeux} alt="">
+                            <a href=${butter.link} class="overlay-btn">SHOP CLEAN</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="descriptCell">
+                    <a class="name" href=${butter.link}>${butter.name}</a>
+                    <br>
+                    <p class="descript">${butter.descript}</p>
+                </div>
+            </div>`;
+            document.getElementById("display").innerHTML = st;
         }
     }
 
-    // display result
-    if (butter != null) {
-        let st = `
-        <div class="cell-container">
-            <div class="cell">
-                <div class="imgs">
-                    <a href=${butter.link}>
-                        <img class="un" src=${butter.imgUn} alt="">
-                        <img class="deux" src=${butter.imgDeux} alt="">
-                        <a href=${butter.link} class="overlay-btn">SHOP CLEAN</a>
-                    </a>
-                </div>
-            </div>
-            <div class="descriptCell">
-                <a class="name" href=${butter.link}>${butter.name}</a>
-                <br>
-                <p class="descript">${butter.descript}</p>
-            </div>
-        </div>`;
-        document.getElementById("display").innerHTML = st;
-    }
 }
 
 makeForm();
 makeButtons();
+
 
 
 

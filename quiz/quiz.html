@@ -233,15 +233,77 @@ input[type="checkbox"]:checked + .option-btn {
     color: black;
 }
 
-
-body{
-    background-image: url(leavesEdited.jpeg);
+.display{
+    background-image: url('https://cdn.shopify.com/s/files/1/0331/1412/8521/files/leavesEdited.jpg?v=1758323266') !important;
     background-size: cover;
-    /* background-color: white; */
+    padding: 5px;
+    border: 10px solid rgb(114,125,101);
 }
+
+@media (max-width: 768px) {
+
+    /* Question text takes full width */
+    .question-text {
+        font-size: 1rem;
+        width: 90vw;
+        padding: 10px;
+    }
+
+    .options {
+        gap: 8px;            /* reduce spacing between choice buttons */
+        justify-content: center;
+    }
+
+    .option-btn {
+        width: 40%;          /* smaller horizontal size so two fit per row */
+        padding: 8px 10px;   /* less padding so they don’t feel oversized */
+        font-size: 0.9rem;   /* shrink text a little */
+    }
+
+    .buttons {
+        flex-wrap: nowrap;      /* keep them side by side */
+        gap: 10px;              /* smaller gap between them */
+    }
+
+    .prevNextButtons {
+        min-width: auto;        /* remove the fixed minimum */
+        width: 40%;             /* shrink width so two fit side by side */
+        padding: 8px 0;         /* less padding */
+        font-size: 0.9rem;      /* smaller text */
+    }
+
+    /* Product display */
+    .cell-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .cell, .descriptCell {
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .descript {
+        padding: 0 20px;
+        line-height: 1.4;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .overlay-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
 </style>
 <body>
-    <div id="display"></div>
+    <div id="display" class="display"></div>
 </body>
 </html>
 
@@ -595,7 +657,8 @@ function makeButtons(){
     `<div class="buttons">
         <button type="button" class="prevNextButtons" id="prevButton" onclick="changeSlide(-1)" ${prevButtonCode}>Back</button>
         ${nextButtonCode}
-    </div>`;
+    </div>
+    <br>`;
 
     document.getElementById("slideshowForm").addEventListener("submit", function(e){
         e.preventDefault();

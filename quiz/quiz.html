@@ -7,11 +7,11 @@
 <style>
 
     .slideActive {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        height: 80vh;
     }
     .slide{
         display: none;
@@ -29,7 +29,7 @@
         flex: 0 0 50%;
         box-sizing: border-box;
         /* padding: 10px; */
-    }
+}
 
     .descript{
         padding-left: 5vw;
@@ -143,7 +143,7 @@ input[type="checkbox"] {
 }
 
 .question-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 15px;
     text-align: center;
     padding: 15px;
@@ -156,7 +156,7 @@ input[type="checkbox"] {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
-    max-width: 75vw;
+    max-width: 60vw;
     margin: 0 auto;
 }
 
@@ -164,11 +164,11 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: none;
+    background-color:rgb(38, 45, 38);
     color: white;
     padding: 12px 25px;
     /* border-radius: 8px; */
-    border: 2px solid white;
+    border: 1px solid white;
     /* height: 5vh; */
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -176,6 +176,7 @@ input[type="checkbox"] {
     text-align: center;
     width: 20vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+    font-size: 14px;
 }
 
 .option-btn:hover {
@@ -204,9 +205,8 @@ input[type="checkbox"]:checked + .option-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 8px;
-    height: 8vh;
+    border-radius: 0px;
+    height: 5vh;
     min-width: 8vh;
     padding: 0 12px;
     border: none;
@@ -214,7 +214,7 @@ input[type="checkbox"]:checked + .option-btn {
     color: black;
     cursor: pointer;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 14px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in-out;
@@ -233,11 +233,14 @@ input[type="checkbox"]:checked + .option-btn {
     color: black;
 }
 
-.display{
+.wholeThing{
+    display: none;
     background-image: url('https://cdn.shopify.com/s/files/1/0331/1412/8521/files/leavesEdited.jpg?v=1758323266') !important;
     background-size: cover;
+}
+.display{
     padding: 5px;
-    border: 10px solid rgb(114,125,101);
+    /* border: 10px solid rgb(114,125,101); */
 }
 
 @media (max-width: 768px) {
@@ -250,14 +253,14 @@ input[type="checkbox"]:checked + .option-btn {
     }
 
     .options {
-        gap: 8px;            /* reduce spacing between choice buttons */
+        gap: 8px;       
         justify-content: center;
     }
 
     .option-btn {
         width: 40%;          /* smaller horizontal size so two fit per row */
         padding: 8px 10px;   /* less padding so they don’t feel oversized */
-        font-size: 0.9rem;   /* shrink text a little */
+        font-size: 10px;   /* shrink text a little */
     }
 
     .buttons {
@@ -266,10 +269,11 @@ input[type="checkbox"]:checked + .option-btn {
     }
 
     .prevNextButtons {
-        min-width: auto;        /* remove the fixed minimum */
+        min-width: 20vw;        /* remove the fixed minimum */
         width: 40%;             /* shrink width so two fit side by side */
         padding: 8px 0;         /* less padding */
-        font-size: 0.9rem;      /* smaller text */
+        font-size: 10px;      /* smaller text */
+        
     }
 
     /* Product display */
@@ -288,6 +292,7 @@ input[type="checkbox"]:checked + .option-btn {
     .descript {
         padding: 0 20px;
         line-height: 1.4;
+        font-size: 13px;
     }
 
     .name {
@@ -300,17 +305,144 @@ input[type="checkbox"]:checked + .option-btn {
     }
 }
 
+/* Starting Screen Layout */
+.starting {
+    display: flex;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.startingImg {
+    max-width: 50vw;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.startingImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.startingDescript {
+    max-width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* stack text + button */
+    justify-content: center; /* center vertically */
+    align-items: center; /* align text to left side */
+    padding: 0 5vw;
+    background-color: rgb(51, 56, 51);
+    color: white;
+}
+
+.startingDescriptText {
+    max-width: 50vw;
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.startingOverlayBtn {
+    background-color: rgb(51, 56, 51);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.startingOverlayBtn:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .starting {
+        flex-direction: column; /* stack vertically */
+        max-width: 100vw;           /* ensure full width */
+        height: auto;
+        margin: 0;              /* remove default margins */
+        padding: 0;
+    }
+
+    .startingImg, .startingDescript {
+        max-width: 100vw;            /* full width */
+        height: auto;           /* half screen height each */
+        flex-shrink: 0;
+    }
+
+    .startingImg img {
+        min-width: 100%;            /* image stretches full width */
+        height: 100%;           /* image fills container height */
+        object-fit: cover;      /* maintain aspect ratio & cover */
+        display: block;         /* remove inline spacing */
+    }
+
+    .startingDescript {
+        min-height: 40vh;
+        max-width: 100vw;
+        padding: 2vw 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .startingDescriptText {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .startingOverlayBtn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+
+
+
 
 </style>
 <body>
-    <div id="display" class="display"></div>
+<div class="starting" id="starting">
+    <div class="startingImg">
+        <img src="https://cdn.shopify.com/s/files/1/0331/1412/8521/files/EMOLLIENT_c12482e3-a6dd-4462-97dc-ded808c7e1af.png?v=1756227966" alt="Body Butter">
+    </div>
+    <div class="startingDescript">
+        <p class="startingDescriptText">Which body butter is best for you?</p>
+        <button class="startingOverlayBtn" id="startingOverlayBtn">TAKE THIS ONE MINUTE SKIN SURVEY!!</button>
+    </div>
+</div>
+
+
+
+    <div class="wholeThing" id="wholeThing">
+        <div id="display" class="display"></div>
+    </div>
 </body>
 </html>
 
 <script>
+
+document.getElementById("startingOverlayBtn").addEventListener("click", function(e){
+    e.preventDefault();   // stop default anchor behavior
+    document.getElementById("starting").style.display = "none";  // hide starting screen
+    document.getElementById("wholeThing").style.display = "block";  // show quiz
+});
+
     //question modes
 let all_that_apply = 0;
 let choose_one = 1;
+
 
 const questions = [
     {
@@ -322,7 +454,7 @@ const questions = [
             "Itchy", 
             "Rough", 
             "Ashy", 
-            "None of the above, just want to glow!"],
+            "None"],
         "question_mode": all_that_apply
     },
     {
@@ -333,12 +465,12 @@ const questions = [
             "Stretch Marks", 
             "Cracked Heels", 
             "Skin Elasticity", 
-            "Dark Spots/ Hyperpigmentation", 
+            "Dark Spots", 
             "Muscle Tension", 
             "Hot Flashes", 
             "Overheating", 
             "Sunburns",          
-            "None of the above"],
+            "None"],
         "question_mode": all_that_apply
     },
     {
@@ -602,8 +734,8 @@ const products = [
 
 
 function makeForm(){
-
-    st = `<form id="slideshowForm">`; //start string
+    
+    st = `<br><form id="slideshowForm">`; //start string
     
     for (let q = 0; q < questions.length; q++){ //iterate through questions
     
@@ -625,14 +757,14 @@ function makeForm(){
             }
             st+=`<input type = "${inputMode}" 
                 id="q${q}a${a}" value="${questions[q].answers[a]}" name="q${q}">
-                <label class="option-btn" for="q${q}a${a}">${questions[q].answers[a]}</label>    <br>`;
+                <label class="option-btn" for="q${q}a${a}">${questions[q].answers[a]}</label>`;
         }
             
 
-        st += `</div>   </div>`;
+        st += `</div>   </div> <br>`;
     }
 
-    st+=`   <div id="buttons" ></div>
+    st+=`   
     </form>`;
 
     document.getElementById("display").innerHTML = st; //insert code into HTML
@@ -653,12 +785,17 @@ function makeButtons(){
     if (currentSlide == 0){ //if currentSlide is first slide
         prevButtonCode = `disabled="disabled"`      //disable prevButton
     }
-    document.getElementById("buttons").innerHTML =
-    `<div class="buttons">
-        <button type="button" class="prevNextButtons" id="prevButton" onclick="changeSlide(-1)" ${prevButtonCode}>Back</button>
-        ${nextButtonCode}
-    </div>
-    <br>`;
+        if (document.getElementById(`q${currentSlide}`).innerHTML.includes(`<div class="buttons">
+                <button type="button" class="prevNextButtons"`)) {
+            document.getElementById("buttons").remove();    //remove any previous buttons
+        }
+        document.getElementById(`q${currentSlide}`).insertAdjacentHTML(
+            'beforeend',
+            `<div class="buttons">
+                <button type="button" class="prevNextButtons" id="prevButton" onclick="changeSlide(-1)" ${prevButtonCode}>Back</button>
+                ${nextButtonCode}
+            </div>`
+        );
 
     document.getElementById("slideshowForm").addEventListener("submit", function(e){
         e.preventDefault();
@@ -756,8 +893,5 @@ function makeResult(formValues) {
 
 makeForm();
 makeButtons();
-
-
-
 
 </script>

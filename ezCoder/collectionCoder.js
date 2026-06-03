@@ -1,106 +1,103 @@
 let defaultProducts = [
-    {
-        "name": "Lemon + Sage Body Butter ",
-        "link": "https://myemollient.com/collections/lemon-sage",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Lemon_Sage_Body_Butter_for_Dry_Skin_and_Ec_1296x.jpg?v=1728704501",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/lemon_and_sage_body_butter_1296x.jpg?v=1728519251"
-    },
-
-    {
-        "name": "Lavender Body Butter",
-        "link": "https://myemollient.com/collections/lavender-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/handmade-lavender-body-butter_2700x.jpg?v=1747099010",
-        "imgDeux": "https://myemollient.com/cdn/shop/products/my-emollient-dry-skin-solution_2700x.jpg?v=1747099010"
-    },
-    {
-        "name": "Almond + Vanilla Body Butter",
-        "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-orgnanic-moisturizer_1296x.jpg?v=1747415007",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-jar-mango-butter-almonds_2700x.jpg?v=1755053852"
-    },
-    {
-        "name": "Body Butter for Sensitive Skin",
-        "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
-        "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._2700x.jpg?v=1755053048"
-    },
-    {
-        "name": "Unscented Body Butter",
-        "link": "https://myemollient.com/collections/unscented",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Unscented_Body_Butter_for_Winter_Dry_Skin_1296x.jpg?v=1737604260",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/best-body-butter-dry-skin-jar-closed_1296x.jpg?v=1747158292"
-    },
-    {
-        "name": "Peppermint Body Butter",
-        "link": "https://myemollient.com/collections/peppermint-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
-    },
-    {
-        "name": "Gift Sets",
-        "link": "https://myemollient.com/collections/body-butter-gift-set",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Body_Butter_Sample_Trio_1296x.jpg?v=1728516912",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/Body_Butter_Trio_Gift_Set_1296x.jpg?v=1728517041"
-    },
-    {
-        "name": "Anti-Bacterial Body Butter",
-        "link": "https://myemollient.com/collections/antibacterial-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/products/antibacterial-body-butter-small_1296x.webp?v=1681356427",
-        "imgDeux": "https://myemollient.com/cdn/shop/products/emol75_anti_3000x_014b4421-0788-4dec-a2f2-9310192e7a0c_1296x.jpg?v=1681356427"
-    }
+  {
+    "name": "Lemon + Sage Body Butter",
+    "link": "https://myemollient.com/collections/lemon-sage",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Lemon_Sage_Body_Butter_for_Dry_Skin_and_Ec_1296x.jpg?v=1728704501",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/lemon_and_sage_body_butter_1296x.jpg?v=1728519251"
+  },
+  {
+    "name": "Lavender Body Butter",
+    "link": "https://myemollient.com/collections/lavender-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/handmade-lavender-body-butter_2700x.jpg?v=1747099010",
+    "imgDeux": "https://myemollient.com/cdn/shop/products/my-emollient-dry-skin-solution_2700x.jpg?v=1747099010"
+  },
+  {
+    "name": "Almond + Vanilla Body Butter",
+    "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-50g-my-emollient-moisturizer_1080x.jpg?v=1768586603",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-50g-roasted-almonds-mango-butter-my-emollient_1080x.jpg?v=1768586860"
+  },
+  {
+    "name": "Fleur D'oranger",
+    "link": "https://myemollient.com/collections/fleur-doranger?ose=false",
+    "imgUn": "https://myemollient.com/cdn/shop/files/clean-beauty-body-butter-fleur-doranger-sensitive-skin_44b76be2-969b-4ce4-97d3-5e3eae86433f_1080x.jpg?v=1774181880",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/fleur-doranger-orange-blossom-body-butter-non-toxic-moisturizer-my-emollient_1080x.jpg?v=1776386019"
+  },
+  {
+    "name": "Body Butter for Sensitive Skin",
+    "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
+    "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_540x.jpg?v=1754141474",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._540x.jpg?v=1755053048"
+  },
+  {
+    "name": "Unscented Body Butter",
+    "link": "https://myemollient.com/collections/unscented",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Unscented_Body_Butter_for_Winter_Dry_Skin_1296x.jpg?v=1737604260",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/best-body-butter-dry-skin-jar-closed_1296x.jpg?v=1747158292"
+  },
+  {
+    "name": "Peppermint Body Butter",
+    "link": "https://myemollient.com/collections/peppermint-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
+  },
+  {
+    "name": "Natural Bug Repellent Body Butter",
+    "link": "https://myemollient.com/products/natural-bug-repellent-body-butter?variant=50025964699815",
+    "imgUn": "https://myemollient.com/cdn/shop/files/my-emollient-natural-bug-repellent-body-butter-50g_540x.jpg?v=1780414095",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/my-emollient-natural-bug-repellent-body-butter-outdoor-adventure_540x.jpg?v=1780427084"
+  }
 ]
 
-
 let tempProducts = [
-    {
-        "name": "Lemon + Sage Body Butter ",
-        "link": "https://myemollient.com/collections/lemon-sage",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Lemon_Sage_Body_Butter_for_Dry_Skin_and_Ec_1296x.jpg?v=1728704501",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/lemon_and_sage_body_butter_1296x.jpg?v=1728519251"
-    },
-
-    {
-        "name": "Lavender Body Butter",
-        "link": "https://myemollient.com/collections/lavender-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/handmade-lavender-body-butter_2700x.jpg?v=1747099010",
-        "imgDeux": "https://myemollient.com/cdn/shop/products/my-emollient-dry-skin-solution_2700x.jpg?v=1747099010"
-    },
-    {
-        "name": "Almond + Vanilla Body Butter",
-        "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-orgnanic-moisturizer_1296x.jpg?v=1747415007",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-jar-mango-butter-almonds_2700x.jpg?v=1755053852"
-    },
-    {
-        "name": "Body Butter for Sensitive Skin",
-        "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
-        "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_1296x.jpg?v=1729980179",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._2700x.jpg?v=1755053048"
-    },
-    {
-        "name": "Unscented Body Butter",
-        "link": "https://myemollient.com/collections/unscented",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Unscented_Body_Butter_for_Winter_Dry_Skin_1296x.jpg?v=1737604260",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/best-body-butter-dry-skin-jar-closed_1296x.jpg?v=1747158292"
-    },
-    {
-        "name": "Peppermint Body Butter",
-        "link": "https://myemollient.com/collections/peppermint-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
-    },
-    {
-        "name": "Gift Sets",
-        "link": "https://myemollient.com/collections/body-butter-gift-set",
-        "imgUn": "https://myemollient.com/cdn/shop/files/Body_Butter_Sample_Trio_1296x.jpg?v=1728516912",
-        "imgDeux": "https://myemollient.com/cdn/shop/files/Body_Butter_Trio_Gift_Set_1296x.jpg?v=1728517041"
-    },
-    {
-        "name": "Anti-Bacterial Body Butter",
-        "link": "https://myemollient.com/collections/antibacterial-body-butter",
-        "imgUn": "https://myemollient.com/cdn/shop/products/antibacterial-body-butter-small_1296x.webp?v=1681356427",
-        "imgDeux": "https://myemollient.com/cdn/shop/products/emol75_anti_3000x_014b4421-0788-4dec-a2f2-9310192e7a0c_1296x.jpg?v=1681356427"
-    }
+  {
+    "name": "Lemon + Sage Body Butter",
+    "link": "https://myemollient.com/collections/lemon-sage",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Lemon_Sage_Body_Butter_for_Dry_Skin_and_Ec_1296x.jpg?v=1728704501",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/lemon_and_sage_body_butter_1296x.jpg?v=1728519251"
+  },
+  {
+    "name": "Lavender Body Butter",
+    "link": "https://myemollient.com/collections/lavender-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/handmade-lavender-body-butter_2700x.jpg?v=1747099010",
+    "imgDeux": "https://myemollient.com/cdn/shop/products/my-emollient-dry-skin-solution_2700x.jpg?v=1747099010"
+  },
+  {
+    "name": "Almond + Vanilla Body Butter",
+    "link": "https://myemollient.com/collections/almond-vanilla-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-50g-my-emollient-moisturizer_1080x.jpg?v=1768586603",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/almond-vanilla-body-butter-50g-roasted-almonds-mango-butter-my-emollient_1080x.jpg?v=1768586860"
+  },
+  {
+    "name": "Fleur D'oranger",
+    "link": "https://myemollient.com/collections/fleur-doranger?ose=false",
+    "imgUn": "https://myemollient.com/cdn/shop/files/clean-beauty-body-butter-fleur-doranger-sensitive-skin_44b76be2-969b-4ce4-97d3-5e3eae86433f_1080x.jpg?v=1774181880",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/fleur-doranger-orange-blossom-body-butter-non-toxic-moisturizer-my-emollient_1080x.jpg?v=1776386019"
+  },
+  {
+    "name": "Body Butter for Sensitive Skin",
+    "link": "https://myemollient.com/collections/body-butter-for-sensitive-skin",
+    "imgUn": "https://myemollient.com/cdn/shop/files/body_butter_for_sensitive_skin_and_eczema_540x.jpg?v=1754141474",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/sensitive-skin-body-butter-with-kokum-and-aloe._540x.jpg?v=1755053048"
+  },
+  {
+    "name": "Unscented Body Butter",
+    "link": "https://myemollient.com/collections/unscented",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Unscented_Body_Butter_for_Winter_Dry_Skin_1296x.jpg?v=1737604260",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/best-body-butter-dry-skin-jar-closed_1296x.jpg?v=1747158292"
+  },
+  {
+    "name": "Peppermint Body Butter",
+    "link": "https://myemollient.com/collections/peppermint-body-butter",
+    "imgUn": "https://myemollient.com/cdn/shop/files/Peppermint_body_butter_for_eczema_dry_skin_menopause_and_hot_flashes_1296x.jpg?v=1750775986",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/peppermint-butter-post-workout-recovery_1296x.jpg?v=1755051005"
+  },
+  {
+    "name": "Natural Bug Repellent Body Butter",
+    "link": "https://myemollient.com/products/natural-bug-repellent-body-butter?variant=50025964699815",
+    "imgUn": "https://myemollient.com/cdn/shop/files/my-emollient-natural-bug-repellent-body-butter-50g_540x.jpg?v=1780414095",
+    "imgDeux": "https://myemollient.com/cdn/shop/files/my-emollient-natural-bug-repellent-body-butter-outdoor-adventure_540x.jpg?v=1780427084"
+  }
 ]
 
 let defaultHeading = "My Emollient Body Butter Collection";
